@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Mobile Price Prediction</h2>
+    <form method="post">
+        <label>Battery Power:</label>
+        <input type="text" name="battery_power" required><br>
+
+        <label>Blue:</label>
+        <input type="text" name="blue" required><br>
+
+        <label>Clock Speed:</label>
+        <input type="text" name="clock_speed" required><br>
+
+        <label>Dual Sim:</label>
+        <input type="text" name="dual_sim" required><br>
+
+        <label>Front Camera (fc):</label>
+        <input type="text" name="fc" required><br>
+
+        <label>4G Support:</label>
+        <input type="text" name="four_g" required><br>
+
+        <label>Internal Memory:</label>
+        <input type="text" name="int_memory" required><br>
+
+        <label>Mobile Weight:</label>
+        <input type="text" name="mobile_wt" required><br>
+
+        <label>RAM:</label>
+        <input type="text" name="ram" required><br>
+
+        <label>Screen Width:</label>
+        <input type="text" name="sc_w" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Predicted Price Range: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
